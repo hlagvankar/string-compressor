@@ -7,7 +7,7 @@ object Run {
     } else {
       try {
         val compress = new StringCompressor
-        val result = compress.compressStr(args(0), args(1).toInt)
+        val result = compress.compressStr(args(0), Some(args(1).toInt))
         println(s"$result")
       } catch {
         case e: NumberFormatException => println(s"Invalid minimum occurence supplied - $e")

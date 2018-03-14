@@ -6,7 +6,14 @@ class StringCompressorTest extends FlatSpec {
 
   "compressStr" should "compress string" in {
     val input = "QQQFAAABEEEDFFC"
-    assert(strCompress.compressStr(input, 2) === "3QF3AB3ED2FC")
+    println(strCompress.compressStr(input, Some(3)))
+    assert(strCompress.compressStr(input, Some(3)) === "3QF3AB3EDFFC")
+  }
+
+  "compressStr without minOccurence" should "compress string" in {
+    val input = "AAABBCDDEEEFF"
+    println(strCompress.compressStr(input, None))
+    assert(strCompress.compressStr(input, None) === "3A2BC2D3E2F")
   }
 
 }
