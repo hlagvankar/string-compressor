@@ -6,4 +6,4 @@ scalaVersion := "2.11.8"
 
 organization := "au.harshal"
 
-libraryDependencies += "org.scalatest" % "scalatest_2.11" % "3.0.5" % "test"
+libraryDependencies ++= Seq("org.scalatest" % "scalatest_2.11" % "3.0.5" % "test")
