@@ -1,3 +1,6 @@
+/*
+ * Run application from here.
+ */
 object Run {
 
   def main(args: Array[String]): Unit = {
