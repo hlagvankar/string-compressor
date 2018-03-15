@@ -5,7 +5,7 @@
  * 2. execute
  * 3. append
  */
-class StringCompressor extends compressor {
+class StringCompressor(util: Utils) extends compressor {
 
   /*
    * This method accepts two parameters
@@ -15,15 +15,7 @@ class StringCompressor extends compressor {
    *                    each characters.
    */
   override def compressStr(input: String, minOccurrence: Option[Int]): String = {
-
-    /*
-     * Check whether minimum occurence is non-negative
-     */
-    minOccurrence match {
-      case Some(v) if v < 0 => throw new Exception(s"Invalid minOccurrence supplied $minOccurrence")
-      case _ => minOccurrence
-    }
-
+    util.validateMinOccurrence(minOccurrence)
     execute(input.toList, Char.MinValue, 0, Nil, minOccurrence).reverse.mkString
   }
 

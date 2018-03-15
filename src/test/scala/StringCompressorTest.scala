@@ -1,8 +1,8 @@
 import org.scalatest.FlatSpec
 
 class StringCompressorTest extends FlatSpec {
-
-  val strCompress = new StringCompressor
+  val util = new Utils
+  val strCompress = new StringCompressor(util)
 
   "compressStr" should "compress string" in {
     val input = "QQQFAAABEEEDFFC"

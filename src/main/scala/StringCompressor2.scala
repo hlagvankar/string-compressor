@@ -2,16 +2,10 @@
  * Second class to compress string using foldLeft function
  */
 
-class StringCompressor2 extends compressor {
+class StringCompressor2(util: Utils) extends compressor {
 
   override def compressStr(input: String, minOccurrence: Option[Int]): String = {
-    /*
-     * Check whether minimum occurence is non-negative
-    */
-    minOccurrence match {
-      case Some(v) if v < 0 => throw new Exception(s"Invalid minOccurrence supplied $minOccurrence")
-      case _ => minOccurrence
-    }
+    util.validateMinOccurrence(minOccurrence)
     execute(input.toList, minOccurrence.getOrElse(0))
   }
 

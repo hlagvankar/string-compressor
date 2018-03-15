@@ -9,8 +9,9 @@ object Run {
       System.exit(1)
     } else {
       try {
-        val compress1 = new StringCompressor
-        val compress2 = new StringCompressor2
+        val util = new Utils
+        val compress1 = new StringCompressor(util)
+        val compress2 = new StringCompressor2(util)
         val result1 = compress1.compressStr(args(0), if(args.length == 2) Some(args(1).toInt) else None)
         val result2 = compress2.compressStr(args(0), if(args.length == 2) Some(args(1).toInt) else None)
         println(s"Printing result1 \n$result1")
