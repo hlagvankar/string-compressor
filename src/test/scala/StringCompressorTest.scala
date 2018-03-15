@@ -29,6 +29,4 @@ class StringCompressorTest extends FlatSpec {
       strCompress.compressStr(input, minOccurrence)
     }
   }
-
-
 }
