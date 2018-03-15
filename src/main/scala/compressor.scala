@@ -1,4 +1,4 @@
 trait compressor {
 
-  def compressStr(input: String, minOccurency: Option[Int]): String = ???
+  def compressStr(input: String, minOccurrence: Option[Int]): String = ???
 }
